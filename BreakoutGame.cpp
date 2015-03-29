@@ -14,44 +14,54 @@ BreakoutGame::~BreakoutGame()
 void BreakoutGame::Start()
 {
 	// any initial starting stuff
-	sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works!");
+	_mainWindow.create(sf::VideoMode(1000, 600), "SFML works!");
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
 
-	while( window.isOpen() )
-	{
-		sf::Event event;
-		while( window.pollEvent(event) )
-		{
-			if( event.type == sf::Event::Closed )
-				window.close();
-			if( sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) )
-				_currentState = GameState::EXITING;
-		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
-	}
+	sf::Clock clock;
+	sf::Time  elapsed;
 
 	// the main loop
-	//while( !IsExiting() )
-	//{
-	//	// do stuff
-	//}
+	while( !IsExiting() )
+	{
+		elapsed = clock.restart();
 
-	// exit
+		_mainWindow.clear();
+		_mainWindow.draw(shape);
+	
+		// update everything
+		Update(elapsed.asMilliseconds());
+
+		_mainWindow.display();
+	}
+
+	// run any cleanup if need be
 }
 
-void BreakoutGame::Update(double delta)
+void BreakoutGame::Update(double deltaTime)
 {
 	// update anything
+	sf::Event event;
+
+	_mainWindow.pollEvent(event);
+
+	if( event.type == sf::Event::Closed )
+	{
+		_currentState = EXITING;
+	}
+	else if( event.type == sf::Event::KeyPressed )
+	{
+		if( sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) )
+		{
+			_currentState = EXITING;
+		}
+	}
 }
 
 bool BreakoutGame::IsExiting()
 {
 	// check to see if the user wants to exit
-	if( _currentState == GameState::EXITING )
+	if( _currentState == EXITING )
 		return true;
 	return false;
 }

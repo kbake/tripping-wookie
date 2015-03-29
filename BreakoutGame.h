@@ -12,7 +12,7 @@ public:
 	enum GameState { INITIALIZING, MENU, PLAYING, PAUSED, EXITING };
 
 private:
-	
+	sf::RenderWindow _mainWindow;
 	GameState _currentState;
 };
 
