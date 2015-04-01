@@ -48,7 +48,7 @@ void BreakoutGame::Update(double deltaTime)
 	switch( _currentState )
 	{
 	case INITIALIZING:
-		// initialize stuff
+		// initialize stuff (load things like audio/images/etc)
 		break;
 	case MENU:
 		// set up the main menu stuff

@@ -13,6 +13,6 @@ public:
 
 private:
 	sf::RenderWindow _mainWindow;
-	GameState _currentState;
+	GameState        _currentState;
 };
 
