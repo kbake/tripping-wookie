@@ -45,6 +45,22 @@ void BreakoutGame::Update(double deltaTime)
 
 	_mainWindow.pollEvent(event);
 
+	switch( _currentState )
+	{
+	case INITIALIZING:
+		// initialize stuff
+		break;
+	case MENU:
+		// set up the main menu stuff
+		break;
+	case PLAYING:
+		// run the main game loop and do whatever else...stuff
+		break;
+	case PAUSED:
+		// draw the pause screen
+		break;
+	}
+
 	if( event.type == sf::Event::Closed )
 	{
 		_currentState = EXITING;
