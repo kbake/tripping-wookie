@@ -61,17 +61,8 @@ void BreakoutGame::Update(double deltaTime)
 		break;
 	}
 
-	if( event.type == sf::Event::Closed )
-	{
-		_currentState = EXITING;
-	}
-	else if( event.type == sf::Event::KeyPressed )
-	{
-		if( sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) )
-		{
-			_currentState = EXITING;
-		}
-	}
+	// figure any events
+	FigureCurrentEvent(&event);
 }
 
 bool BreakoutGame::IsExiting()
@@ -80,4 +71,22 @@ bool BreakoutGame::IsExiting()
 	if( _currentState == EXITING )
 		return true;
 	return false;
+}
+
+void BreakoutGame::FigureCurrentEvent(const sf::Event* currEvent)
+{
+	switch( (*currEvent).type )
+  {
+  case sf::Event::Closed:
+    {
+      _currentState = EXITING;
+      break;
+    }
+  case sf::Event::KeyPressed:
+    {
+      if( sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) )
+        _currentState = EXITING;
+      break;
+    }
+  }
 }

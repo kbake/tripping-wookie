@@ -12,6 +12,8 @@ public:
 	enum GameState { INITIALIZING, MENU, PLAYING, PAUSED, EXITING };
 
 private:
+	void FigureCurrentEvent(const sf::Event* currEvent);
+
 	sf::RenderWindow _mainWindow;
 	GameState        _currentState;
 };
