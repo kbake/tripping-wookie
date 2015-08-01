@@ -6,7 +6,8 @@ public:
 	~BreakoutGame();
 
 	void Start();
-	void Update(double);
+	void Update(const double);
+  void Render();
 	bool IsExiting();
 
 	enum GameState { INITIALIZING, MENU, PLAYING, PAUSED, EXITING };
@@ -14,7 +15,8 @@ public:
 private:
 	void FigureCurrentEvent(const sf::Event* currEvent);
 
-	sf::RenderWindow _mainWindow;
-	GameState        _currentState;
+	sf::RenderWindow  _mainWindow;
+  GameEntityManager _entityManager;
+	GameState         _currentState;
 };
 

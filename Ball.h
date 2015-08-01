@@ -10,7 +10,7 @@ public:
 	~Ball();
 
 	// update the ball, see if it's hit anything or gone off course, otherwise just keep moving
-	void Update(double);
+	void Update(const double);
 	// draw the ball
 	void Render();
 

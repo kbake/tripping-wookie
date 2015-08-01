@@ -9,5 +9,15 @@ class GameEntityManager
 public:
   GameEntityManager();
   ~GameEntityManager();
+
+  void AddBall();
+  void AddBrick();
+  void AddPaddle();
+
+  void UpdateEntities(const double);
+  void RenderEntities(sf::RenderWindow&);
+
+private:
+  std::vector<GameEntity*> _gameEntities;
 };
 

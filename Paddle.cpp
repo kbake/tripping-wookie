@@ -12,7 +12,7 @@ Paddle::~Paddle()
 {
 }
 
-void Paddle::Update(double delta)
+void Paddle::Update(const double delta)
 {
 	// update the paddle accordingly
 }

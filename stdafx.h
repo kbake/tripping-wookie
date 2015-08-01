@@ -16,3 +16,4 @@
 #include <SFML/Graphics.hpp>
 
 #include "GameEntity.h"
+#include "GameEntityManager.h"

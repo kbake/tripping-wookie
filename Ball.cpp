@@ -11,7 +11,7 @@ Ball::~Ball()
 {
 }
 
-void Ball::Update(double delta)
+void Ball::Update(const double delta)
 {
 	// update the ball (checking to see if it hit anything and moving accordingly)
 }

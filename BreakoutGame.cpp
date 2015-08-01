@@ -14,7 +14,11 @@ BreakoutGame::~BreakoutGame()
 void BreakoutGame::Start()
 {
 	// any initial starting stuff
-	_mainWindow.create(sf::VideoMode(1000, 600), "SFML works!");
+	_mainWindow.create(sf::VideoMode(1000, 600), "Brick  Break Clone Maybe!");
+
+  _entityManager.AddBall();
+  _entityManager.AddBrick();
+  _entityManager.AddPaddle();
 
 	sf::Clock clock;
 	sf::Time  elapsed;
@@ -25,7 +29,9 @@ void BreakoutGame::Start()
 		elapsed = clock.restart();
 
 		_mainWindow.clear();
-		_mainWindow.draw(shape);
+
+    // render everything
+    Render();
 	
 		// update everything
 		Update(elapsed.asMilliseconds());
@@ -36,7 +42,13 @@ void BreakoutGame::Start()
 	// run any cleanup if need be
 }
 
-void BreakoutGame::Update(double deltaTime)
+void BreakoutGame::Render()
+{
+  // render everything
+  _entityManager.RenderEntities(_mainWindow);
+}
+
+void BreakoutGame::Update(const double deltaTime)
 {
 	// update anything
 	sf::Event event;
@@ -53,6 +65,7 @@ void BreakoutGame::Update(double deltaTime)
 		break;
 	case PLAYING:
 		// run the main game loop and do whatever else...stuff
+    _entityManager.UpdateEntities(deltaTime);
 		break;
 	case PAUSED:
 		// draw the pause screen

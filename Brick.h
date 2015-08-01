@@ -9,7 +9,7 @@ public:
 	Brick();
 	~Brick();
 
-	void Update(double);
+	void Update(const double);
 	void Render();
 
 private:

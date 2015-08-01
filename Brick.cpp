@@ -11,7 +11,7 @@ Brick::~Brick()
 {
 }
 
-void Brick::Update(double delta)
+void Brick::Update(const double delta)
 {
   //
 }
