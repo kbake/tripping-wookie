@@ -10,9 +10,9 @@ public:
   GameEntityManager();
   ~GameEntityManager();
 
-  void AddBall();
-  void AddBrick();
-  void AddPaddle();
+  const int AddBall();
+  const int AddBrick();
+  const int AddPaddle();
 
   void UpdateEntities(const double);
   void RenderEntities(sf::RenderWindow&);

@@ -15,6 +15,11 @@ public:
 	void Render();
 
 private:
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
+  {
+    target.draw(_ball);
+  }
+
 	// the ball itself
 	sf::RectangleShape _ball;
 

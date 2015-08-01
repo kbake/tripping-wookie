@@ -22,19 +22,25 @@ GameEntityManager::~GameEntityManager()
   _gameEntities.clear();
 }
 
-void GameEntityManager::AddBall()
+const int GameEntityManager::AddBall()
 {
+  int size = _gameEntities.size();
   _gameEntities.push_back(new Ball());
+  return _gameEntities[size]->GetId();
 }
 
-void GameEntityManager::AddBrick()
+const int GameEntityManager::AddBrick()
 {
+  int size = _gameEntities.size();
   _gameEntities.push_back(new Brick());
+  return _gameEntities[size]->GetId();
 }
 
-void GameEntityManager::AddPaddle()
+const int GameEntityManager::AddPaddle()
 {
+  int size = _gameEntities.size();
   _gameEntities.push_back(new Paddle());
+  return _gameEntities[size]->GetId();
 }
 
 void GameEntityManager::UpdateEntities(const double delta)
