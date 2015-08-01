@@ -4,6 +4,7 @@
 
 Paddle::Paddle()
 {
+  _paddle.setSize(sf::Vector2f(20, 10));
 }
 
 

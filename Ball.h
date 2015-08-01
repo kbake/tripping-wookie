@@ -1,6 +1,9 @@
 #pragma once
 
-class Ball
+/*
+  Should encompass all that makes up a ball
+*/
+class Ball : public GameEntity
 {
 public:
 	Ball();

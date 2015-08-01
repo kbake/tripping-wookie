@@ -1,5 +1,9 @@
 #pragma once
-class Paddle
+
+/*
+  Defines what makes a paddle tick
+*/
+class Paddle : public GameEntity
 {
 public:
 	Paddle();

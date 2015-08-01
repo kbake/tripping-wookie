@@ -15,8 +15,6 @@ void BreakoutGame::Start()
 {
 	// any initial starting stuff
 	_mainWindow.create(sf::VideoMode(1000, 600), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
 
 	sf::Clock clock;
 	sf::Time  elapsed;
