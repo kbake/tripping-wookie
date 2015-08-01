@@ -7,10 +7,10 @@ class Brick : public GameEntity
 {
 public:
 	Brick();
+  Brick(sf::Vector2f&);
 	~Brick();
 
 	void Update(const double);
-	void Render();
 
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -6,6 +6,10 @@ Brick::Brick()
 {
 }
 
+Brick::Brick(sf::Vector2f& size)
+{
+  _brick.setSize(size);
+}
 
 Brick::~Brick()
 {
@@ -13,10 +17,5 @@ Brick::~Brick()
 
 void Brick::Update(const double delta)
 {
-  //
-}
-
-void Brick::Render()
-{
-  //
+  // check to see if it should move or be removed or whatever
 }

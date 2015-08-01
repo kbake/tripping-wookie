@@ -11,7 +11,6 @@ public:
   virtual ~GameEntity();
 
   virtual void Update(const double) = 0;
-  virtual void Render()             = 0;
 
   const int GetId() const;
 

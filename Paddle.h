@@ -7,10 +7,10 @@ class Paddle : public GameEntity
 {
 public:
 	Paddle();
+  Paddle(sf::Vector2f&);
 	~Paddle();
 
 	void Update(const double);
-	void Render();
 
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -21,4 +21,3 @@ private:
 	sf::RectangleShape _paddle;
 	float _velocity;
 };
-

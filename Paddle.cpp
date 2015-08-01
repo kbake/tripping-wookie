@@ -4,9 +4,12 @@
 
 Paddle::Paddle()
 {
-  _paddle.setSize(sf::Vector2f(20, 10));
 }
 
+Paddle::Paddle(sf::Vector2f& size)
+{
+  _paddle.setSize(size);
+}
 
 Paddle::~Paddle()
 {
@@ -15,9 +18,4 @@ Paddle::~Paddle()
 void Paddle::Update(const double delta)
 {
 	// update the paddle accordingly
-}
-
-void Paddle::Render()
-{
-	// draw the paddle accordingly
 }

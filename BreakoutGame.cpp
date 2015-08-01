@@ -16,6 +16,7 @@ void BreakoutGame::Start()
 	// any initial starting stuff
 	_mainWindow.create(sf::VideoMode(1000, 600), "Brick  Break Clone Maybe!");
 
+  // add whatever entities we want
   _entityManager.AddBall();
   _entityManager.AddBrick();
   _entityManager.AddPaddle();
